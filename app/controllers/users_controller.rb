@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome! You are now a Basic Bitch!"
       redirect_to root_path
       else
-      redirect_to new_user_path
+      render 'new'
       end
   end
 

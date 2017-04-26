@@ -1,6 +1,7 @@
 <h1>New User Sign Up</h1>
 
 <%= form_for @user do |f| %>
+  <%=render 'shared/error_messages' %>
 
   <%= f.label :first_name, 'First Name*'%>
   <%= f.text_field :first_name %>
@@ -18,5 +19,6 @@
   <%= f.password_field :password_confirmation %>
 
   <%= f.submit 'Create Account'%>
+
 
 <% end %>
