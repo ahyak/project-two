@@ -1,0 +1,17 @@
+<h1>Edit A Post</h1>
+
+<%= form_for @post do |post| %>
+
+  <%= post.label :title, 'Title*'%>
+  <%= post.text_field :title %>
+
+  <%= post.label :body, 'Body*'%>
+  <%= post.text_area :body %>
+
+  <%= post.label :image, 'Image'%>
+  <%= post.text_field :image %>
+
+  <%= post.submit 'Update/Edit Post'%>
+
+
+<% end %>

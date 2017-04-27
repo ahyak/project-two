@@ -1,0 +1,17 @@
+<h1>Create A Post</h1>
+
+<%= form_for @post do |post| %>
+
+  <%= post.label :title, 'Title*'%>
+  <%= f.text_field :title %>
+
+  <%= f.label :body, 'Body*'%>
+  <%= f.text_area :body %>
+
+  <%= f.label :image, 'Image'%>
+  <%= f.text_field :image %>
+
+  <%= f.submit 'Create Post'%>
+
+
+<% end %>
