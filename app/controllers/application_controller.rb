@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :logged_in?, :authorize
+  helper_method :current_user, :logged_in?, :authorize, :correct_user
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -11,7 +11,15 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    redirect_to root_path unless logged_in?
+    unless logged_in?
+    flash[:alert] = "Please log in to continue!"
+    redirect_to login_path
+    end
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
   end
 
 end
