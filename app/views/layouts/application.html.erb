@@ -3,22 +3,26 @@
   <head>
     <title><%= yield(:title) %> | The Basic Bitch Blog</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-      <%= render 'shared/navigationbar' %>  
+      <%= render 'shared/navigationbar' %>
       <% if flash[:alert] %>
-    <!-- <div class="alert alert-danger"> -->
+    <div class="alert alert-danger">
       <%= flash[:alert] %>
-    <!-- </div> -->
+    </div>
       <% end %>
     <% if flash[:success] %>
-  <!-- <div class="alert alert-danger"> -->
+  <div class="alert alert-success">
     <%= flash[:success] %>
-  <!-- </div> -->
+  </div>
     <% end %>
+    <div class="container">
+      <div class="page-header">
+        <h1 class="text-center text-muted">The Basic Bitch Blog</h1>
+      </div>
     <%= yield %>
+    </div>
   </body>
 </html>
