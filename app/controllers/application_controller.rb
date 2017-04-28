@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_user, :logged_in?, :authorize, :correct_user
+  helper_method :current_user, :logged_in?, :authorize, :correct_user,
+                :post_owner
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -20,6 +21,11 @@ class ApplicationController < ActionController::Base
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_url) unless @user == current_user
+  end
+
+  def post_owner
+    @post = Post.find(params[:id])
+    redirect_to(root_url) unless @post.user == current_user
   end
 
 end

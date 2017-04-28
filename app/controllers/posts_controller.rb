@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authorize, only: [:edit, :update, :new, :create]
-  before_action :correct_user, only: [:edit, :update, :new, :create]
+  before_action :post_owner, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Your post was successfully created!"
-      redirect_to root_path
+      redirect_to current_user
     else
       redirect_to new_post
     end
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:success] = "Your Post has been successfully updated!"
-      redirect_to post_path
+      redirect_to current_user
     else
       render 'edit'
     end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title><%= yield(:title) %> | The Basic Bitch Blog</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,7 +9,7 @@
   </head>
 
   <body>
-      <%=render 'shared/navigationbar' %>
+      
       <% if flash[:alert] %>
     <!-- <div class="alert alert-danger"> -->
       <%= flash[:alert] %>
