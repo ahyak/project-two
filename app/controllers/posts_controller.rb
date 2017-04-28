@@ -20,14 +20,14 @@ class PostsController < ApplicationController
       flash[:success] = "Your post was successfully created!"
       redirect_to current_user
     else
-      redirect_to new_post
+      render 'new'
     end
   end
 
   def destroy
-    @post = post.find params[:id]
+    @post = Post.find params[:id]
     @post.destroy
-    redirect_to root_path
+    redirect_to current_user
   end
 
   def edit

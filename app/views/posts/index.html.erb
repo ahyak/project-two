@@ -2,6 +2,6 @@
 <ul>
   <% @posts.each do |post| %>
     <li> <%= link_to post.title, post_path(post.id) %> </li>
-    <li><h4> Created by: <%= link_to post.user(first_name), user_path %></h4></li>
+    <li><h4> Created by: <%= link_to post.user.first_name, user_path(post.user) %></h4></li>
   <% end %>
 </ul>

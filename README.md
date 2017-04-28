@@ -29,25 +29,26 @@ After both players have completed their rounds, the winner of the game will be a
 ---
 # Technology used:
 
-+ Ruby on Rails.
-+ html
-+ CSS (using Bootstrap)
-+
-
-The graphics inside the cards were created using:
-+ Adobe Illustrator
-+ Adobe Photoshop
++ Ruby on Rails
++ Html
++ CSS
++ Bootstrap
++ Heroku
 ---
 # User Stories:
 
-+ When I check this game, I think the creators like Giraffes.
-+ When I start playing the game, I realize it can be hard to match the giraffes.
++ I can easily sign up into this page.
++ When I sign up, I'm easily logged in.
++ When I log in, I can navigate into my account and access my profile page.
++ I am able to change my name, email and password.
++ When I log in, I can navigate into my account and access my posts.
++ I am able to access my posts, edit them, delete them, and create new ones.
 ---
 # Dream Features:
 
-+ CSS features
-+ Add player names
-+ fix margins, floats, paddings, etc..
-+ Create transitions and 3D effects
-+ Fix the images so they don't show a white background
++ Comment System
++ Super Admin
++ Better styling
++ Image Upload
 + Make it look more professional
++ Status Id (Published vs Draft)
