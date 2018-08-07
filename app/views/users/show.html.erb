@@ -1,22 +1,63 @@
 <% provide(:title, @user.first_name) %>
+<!-- Page Header -->
+<header class="masthead" id="profilepage">
+  <%= render 'shared/navigationbar' %>
+  <div class="overlay"></div>
+<!-- user's profile info  -->
+  <div class="container">
+    <!-- <%= render 'shared/error_messages' %> -->
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <%= render 'shared/alerts' %>
+        <div class="site-heading" id="profile-heading">
+        <%= gravatar_image_tag('@user.email', :alt => '@user.first_name',
+        :class => "img-circle")%>
+        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+        <h3><%= @user.email %></h3>
+        <% if @user == current_user %>
+          <button class="btn btn-primary"><%= link_to "Create Post", new_post_path%></button>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<h1><%= gravatar_image_tag('@user.email', :alt => '@user.first_name')%>
-    <%= @user.first_name %> <%= @user.last_name %></h1>
+<div class="container">
+  <div class="row">
+      <% @user.posts.each do |post| %>
+      <div class="media">
+        <div class="media-left media-middle">
+          <img src="<%= post.image %>" alt="" width="450" height="280">
+        </div>
+        <div class="media-body">
+        <!-- <div class="post-preview"> -->
+        <h4 class="media-heading"><%= post.title %></h4>
 
-<h2><%= @user.email %></h2>
+        <!-- <h2 class="post-title"><%= post.title %></h2> -->
+        <p>
+          <%= post.body %>
+        </p>
 
-<ul>
-<% @user.posts.each do |post| %>
-  <li><h1> <%= post.title %></h1></li>
-  <li> <%= post.body %></li>
-  <% if current_user == post.user %>
-  <li><%= link_to "Edit Post", edit_post_path(post) %>
-  <li><%= link_to 'Delete Post', post, :method => :delete, confirm: "Are you sure?"%></li>
-  <% end %>
-<% end %>
-</ul>
-<br>
-<br>
-<% if @user == current_user %>
-<li><%= link_to "Create Post", new_post_path%>
-<% end %>
+
+
+        <% if current_user == post.user %>
+        <div class="parent">
+          <%= link_to "Edit Post", edit_post_path(post), class:"btn btn-primary edit_button" %></button>
+          <%= link_to 'Delete Post', post, :method => :delete, confirm: "Are you sure?", class:"btn btn-danger delete_button"%>
+        </div>
+        <%end %>
+        </div>
+       <!-- </div> -->
+      </div>
+    </div>
+
+      <!-- <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"> -->
+
+      <%end %>
+  </div>
+      <hr>
+
+    <!-- </div> -->
+  <!-- </div>
+</div> -->

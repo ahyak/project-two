@@ -1,23 +1,50 @@
-<%= form_for(:session, url: login_path, html: {:class => 'form-horizontal'}) do |f| %>
-<div class="row"><legend class="col-md-4 col-md-offset-4">Sign In!</legend></div>
-<fieldset>
-<div class="form-group">
-	<%= f.label :email, 'Email Address*',class: 'col-md-4 control-label' %>
-	<div class="col-md-5">
-		<%= f.text_field :email, class:'form-control' %>
+<!-- Page Header -->
+	<header class="masthead" id="signin_background">
+		<%= render 'shared/navigationbar' %>
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-10 mx-auto">
+					<%= render 'shared/alerts' %>
+					<div class="page-heading">
+						<h1>Sign In!</h1>
+						<span class="subheading">What are you waiting for? Go ahead, Sign in!</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<fieldset>
+				<%= form_for(:session, url: login_path, html: {:class => 'contactForm'}) do |f| %>
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls">
+						<%= f.label :email, 'Email Address', class:''%>
+						<%= f.text_field :email, class:'form-control' %>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls">
+						<%= f.label :password, 'Password'%>
+						<%= f.password_field :password, class:'form-control' %>
+					</div>
+				</div>
+				<br>
+				<div class="form-group">
+						<%= f.submit 'Log in',class: 'btn btn-primary' %>
+					  <%= link_to "Don't have an account?", signup_path, class:'btn btn-primary'%>
+				</fieldset>
+				</div>
+				<%end %>
+
+			</div>
+		</div>
 	</div>
-</div>
-<div class="form-group">
-	<%= f.label :password, 'Password*',class: 'col-md-4 control-label' %>
-	<div class="col-md-5">
-		<%= f.password_field :password, class:'form-control' %>
-	</div>
-</div>
-<div class="form-group">
-	<div class="col-md-8 col-md-offset-4">
-		<%= f.submit 'Log in',class: 'btn' %>
-	  <%= link_to "Don't have an account?", signup_path, class:'btn btn-primary'%>
-	</div>
-</div>
-</fieldset>
-<%end %>
+
+	<hr>
+
+	<!-- Footer -->

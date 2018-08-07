@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | The Basic Bitch Blog</title>
+    <title><%= yield(:title) %> | Inside Out</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'styles' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-      <%= render 'shared/navigationbar' %>
-      <% if flash[:alert] %>
-    <div class="alert alert-danger">
-      <%= flash[:alert] %>
-    </div>
-      <% end %>
-    <% if flash[:success] %>
-  <div class="alert alert-success">
-    <%= flash[:success] %>
-  </div>
-    <% end %>
-    <div class="container">
-      <div class="page-header">
-        <h1 class="text-center text-muted">The Basic Bitch Blog</h1>
-      </div>
     <%= yield %>
-    </div>
+    <script>
+      setTimeout("$('#flash_notice').fadeOut('slow')", 3000)
+      setTimeout("$('#flash_errors').fadeOut('slow')", 3000)
+    </script>
   </body>
 </html>

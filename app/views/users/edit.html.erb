@@ -1,41 +1,64 @@
-<%= form_for @user, :html => {class: 'form-horizontal'} do |f| %>
-<div class="row"><legend class="col-md-4 col-md-offset-4">Edit Your Profile:</legend></div>
-<fieldset>
-<%= render 'shared/error_messages' %>
-<div class="form-group">
-  <%= f.label :first_name, class: 'col-md-4 control-label' %>
-  <div class="col-md-5">
-    <%= f.text_field :first_name, class:'form-control'  %>
-  </div>
-</div>
-<div class="form-group">
-<%= f.label :last_name, class: 'col-md-4 control-label' %>
-  <div class="col-md-5">
-    <%= f.text_field :last_name, class:'form-control'  %>
-  </div>
-</div>
-<div class="form-group">
-  <%= f.label :email, class: 'col-md-4 control-label' %>
-  <div class="col-md-5">
-    <%= f.email_field :email, class:'form-control'  %>
-  </div>
-</div>
-<div class="form-group">
-<%= f.label :password, class: 'col-md-4 control-label' %>
-  <div class="col-md-5">
-  <%= f.password_field :password, class:'form-control'  %>
-  </div>
-</div>
-<div class="form-group">
-<%= f.label :password_confirmation, class: 'col-md-4 control-label'%>
-  <div class="col-md-5">
-    <%= f.password_field :password_confirmation, class:'form-control'  %>
-  </div>
-</div>
-<div class="form-group">
-  <div class="col-md-8 col-md-offset-4">
-    <%= f.submit "Save changes" %>
-  </div>
-</div>
-</fieldset>
-<% end %>
+<!-- Page Header -->
+	<header class="masthead" id="editprofile_background">
+		<%= render 'shared/navigationbar' %>
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-10 mx-auto">
+					<div class="page-heading">
+						<h1>Edit Your Profile</h1>
+						<span class="subheading">You can be whoever you set your mind to be ;)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+        <%= form_for @user, :html => {class: 'form-horizontal'} do |f| %>
+        <%= render 'shared/error_messages' %>
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, class:'form-control'  %>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, class:'form-control'  %>
+					</div>
+				</div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <%= f.label :email %>
+            <%= f.email_field :email, class:'form-control'  %>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <%= f.label :password %>
+            <%= f.password_field :password, class:'form-control'  %>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class:'form-control'  %>
+          </div>
+        </div>
+				<br>
+				<div class="form-group">
+          <%= f.submit "Save changes",class: 'btn btn-primary' %>
+				</div>
+				<%end %>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- Footer -->

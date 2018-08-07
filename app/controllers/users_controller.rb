@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Welcome! You are now a Basic Bitch!"
+      flash[:success] = "Welcome to Inside Out!"
       redirect_to root_path
       else
       render 'new'

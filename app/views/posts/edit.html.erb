@@ -1,28 +1,51 @@
-<%= form_for @post, :html => {class: 'form-horizontal'}  do |post| %>
-<div class="row"><legend class="col-md-4 col-md-offset-4">Edit Your Post:</legend></div>
-<fieldset>
-<div class="form-group">
-  <%= post.label :title, 'Title*', class: 'col-md-4 control-label'%>
-  <div class="col-md-5">
-  <%= post.text_field :title, class:'form-control' %>
-  </div>
-</div>
-<div class="form-group">
-  <%= post.label :body, 'Body*', class: 'col-md-4 control-label'%>
-  <div class="col-md-5">
-  <%= post.text_area :body, class:'form-control' %>
-  </div>
-</div>
-<div class="form-group">
-  <%= post.label :image, 'Image', class: 'col-md-4 control-label'%>
-  <div class="col-md-5">
-  <%= post.text_field :image, class:'form-control' %>
-  </div>
-</div>
-  <div class="form-group">
-    <div class="col-md-8 col-md-offset-4">
-  <%= post.submit 'Update/Edit Post', class: 'btn'%>
-    </div>
-  </div>
-</fieldset>
-<% end %>
+<!-- Page Header -->
+	<header class="masthead" id="editpost_background">
+		<%= render 'shared/navigationbar' %>
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-10 mx-auto">
+					<div class="page-heading">
+						<h1>Edit you post!</h1>
+						<span class="subheading">Sometimes you gotta make it better!</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+        <%= form_for @post, :html => {class: 'form-horizontal'}  do |post| %>
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls">
+            <%= post.label :title, 'Title'%>
+            <%= post.text_field :title, class:'form-control' %>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="form-group floating-label-form-group controls">
+            <%= post.label :body, 'Body'%>
+            <%= post.text_area :body, class:'form-control' %>
+					</div>
+				</div>
+        <div class="control-group">
+          <div class="form-group floating-label-form-group controls">
+            <%= post.label :image, 'Image'%>
+            <%= post.text_field :image, class:'form-control' %>
+          </div>
+        </div>
+        <br>
+				<div class="form-group">
+          <%= post.submit 'Update/Edit Post', class: 'btn btn-primary'%>
+				</div>
+				<%end %>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<!-- Footer -->
