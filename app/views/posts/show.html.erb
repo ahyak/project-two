@@ -1,14 +1,14 @@
-<!-- Page Header -->
+  <% provide(:title, @post.title) %>
+  <!-- Page Header -->
   <header class="masthead" style="background-image: url(<%= @post.image%>)">
-    <%= render 'shared/navigationbar' %>
-    <div class="overlay"></div>
+  <%= render 'shared/navigationbar' %>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
             <h1><%= @post.title%></h1>
             <span class="meta">Posted by
-              <%= @post.user.first_name %>
+              <%= link_to @post.user.first_name, user_path(@post.user.id)%>
             </span>
           </div>
         </div>
@@ -26,7 +26,17 @@
       </div>
     </div>
   </article>
-
   <hr>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-11">
+        <%= link_to "Back to Posts ", root_path, class:"btn btn-primary backtoposts" %>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
   <!-- Footer -->
+  <%= render 'shared/footer' %>

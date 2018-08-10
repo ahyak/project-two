@@ -1,83 +1,70 @@
-<% if logged_in? %>
-<!-- Page Header -->
-<header class="masthead">
+  <!-- Page Header -->
+  <% if logged_in? %>
+  <header class="masthead" id="mainhead_background-signedin">
   <%= render 'shared/navigationbar' %>
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
         <%= render 'shared/alerts' %>
-        <div class="site-heading">
-          <h1>Inside Out</h1>
-          <span class="subheading">Your go to for everything beauty, food, and health!</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- Posts -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-md-10 mx-auto">
-      <% @posts.each do |post| %>
-      <div class="post-preview">
-            <!-- <a href="post.html"> -->
-              <h2 class="post-title">
-                <%= link_to post.title, post_path(post.id), class:"post-preview"%>
-              </h2>
-            <!-- </a> -->
-            <p class="post-meta">Posted by
-              <%= link_to post.user.first_name, user_path(post.user.id), class:"col" %>
-            </p>
-      </div>
-      <hr>
-      <%end %>
-      <!-- Pager -->
-      <div class="clearfix">
-        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<hr>
-<% else %>
-<header class="masthead mainpage-heading" id="mainhead_background">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <%= render 'shared/alerts' %>
-        <div class="site-heading">
-          <h1>Inside Out</h1>
-          <span class="subheading">Your go to for everything beauty, food, and health!</span>
-          <div id="main-buttons">
-            <%= link_to "About",about_path, class:"btn btn-mainpage"%>
-            <%= link_to "Log in", login_path, class:"btn btn-mainpage"%>
-            <%= link_to "Sign up", signup_path, class:"btn btn-mainpage"%>
+          <div class="site-heading">
+            <h1>Inside Out</h1>
+            <span class="subheading">Your go to for everything beauty, food, and health!</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
-<% end %>
+  </header>
 
-
-<!-- <div class="container-fluid">
-
-  <div class="media">
-    <div class="media-left media-middle">
-      <a href="#">
-        <img class="media-object" src="https://dummyimage.com/304x150/e8cfe8/000105.jpg&text=This+is+a+Sample+Image" alt="dummy-image">
-      </a>
+  <!-- Posts -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto text-center">
+        <% @posts.each do |post| %>
+        <div class="post-preview">
+          <h2 class="post-title">
+            <%= link_to post.title, post_path(post.id), class:"post-preview"%>
+          </h2>
+          <p class="post-meta">Posted by
+            <%= link_to post.user.first_name, user_path(post.user.id), class:"col" %>
+          </p>
+        </div>
+        <hr>
+        <%end %>
+      </div>
     </div>
-    <div class="media-body">
-      <h4 class="media-heading"></h4>
-        <%= gravatar_image_tag('@user.email', :alt => '@user.first_name',
-        :class => "img-circle")%>
-    </div>
   </div>
 
-</div> -->
+  <!-- back to top  -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-11">
+        <%= link_to "Back to Top ", root_path, class:"btn btn-primary backtoposts" %>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+
+  <!-- footer -->
+  <%= render 'shared/footer' %>
+
+  <% else %>
+  <header class="masthead mainpage-heading" id="mainhead_background">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <%= render 'shared/alerts' %>
+          <div class="site-heading">
+            <h1>Inside Out</h1>
+            <span class="subheading">Your go to for everything beauty, food, and health!</span>
+            <div id="main-buttons">
+              <%= link_to "About",about_path, class:"btn btn-mainpage"%>
+              <%= link_to "Log in", login_path, class:"btn btn-mainpage"%>
+              <%= link_to "Sign up", signup_path, class:"btn btn-mainpage"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <% end %>

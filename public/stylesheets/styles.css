@@ -15,14 +15,44 @@ p {
   line-height: 1.5;
   margin: 30px 0;
 }
-a {
-   color: #FFF;
-   text-decoration: none;
+a{
+  color: #FFF;
+  text-decoration: none;
+}
+
+a:focus, a:hover {
+  color: #99888e;
+}
+
+a#createpost-link:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: none!important;
+}
+
+.navlinks-menu {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+
+.navbar-menu {
+  font-weight: 800;
 }
 
 p a {
   color: #337ab7;
   text-decoration: underline;
+}
+
+a#footer-icon {
+  /*color: #886978;*/
+  color: #e0dfdf;
 }
 
 
@@ -39,10 +69,10 @@ h6 {
 body {
   font-family: 'Montserrat', sans-serif;
 }
-.header-content {
+/*.header-content {
   background: url('wallpaper.jpg');
   height: 470px;
-}
+}*/
 
 .header-title {
   font-family: 'Montserrat', sans-serif;
@@ -54,12 +84,57 @@ body {
 
 /*header page */
 
+header.masthead {
+  margin-bottom: 50px;
+  background-color: #e0dfdf;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+#mainhead_background {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 56px);
+  height: 100%;
+  background: url("oils-web.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#mainhead_background-signedin {
+  background: url('oils-web.jpg') no-repeat center center;
+  background-color: #e0dfdf;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.backtoposts {
+  float: right;
+}
+
+header.masthead .site-heading {
+    text-align: center;
+}
 /*profile */
 
 #profilepage {
   margin-bottom: 50px;
-  background: url('paper.jpg')no-repeat center center;
-  background-color: #868e96;
+  background: url('desktop-web.jpg')no-repeat center center;
+  background-color: #e0dfdf;
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
@@ -70,8 +145,8 @@ body {
 
 #editprofile_background {
   margin-bottom: 50px;
-  background: url('profile.jpg')no-repeat center center;
-  background-color: #868e96;
+  background: url('editprofile-web.jpg')no-repeat center center;
+  background-color: #e0dfdf;
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
@@ -81,8 +156,8 @@ body {
 }
 #signup_background {
   margin-bottom: 50px;
-  background: url('coffee.jpg')no-repeat center center;
-  background-color: #868e96;
+  background: url('coffee-web.jpg')no-repeat center center;
+  background-color: #e0dfdf;
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
@@ -95,8 +170,8 @@ body {
 
 #editpost_background {
   margin-bottom: 50px;
-  background: url('editpost.jpg')no-repeat center center;
-  background-color: #868e96;
+  background: url('editpost-web.jpg')no-repeat center center;
+  background-color: #e0dfdf;
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
@@ -106,8 +181,8 @@ body {
 }
 #newpost_background {
   margin-bottom: 50px;
-  background: url('newpost.jpg')no-repeat center center;
-  background-color: #868e96;
+  background: url('newpost-web.jpg')no-repeat center center;
+  background-color: #e0dfdf;
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
@@ -117,8 +192,8 @@ body {
 }
 #signin_background {
   margin-bottom: 50px;
-  background: url('beachy.jpg')no-repeat center center;
-  /*background-color: #868e96;*/
+  background: url('beachy-web.jpg')no-repeat center center;
+  background-color: #e0dfdf;
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
@@ -129,8 +204,8 @@ body {
 
 #about_background {
   margin-bottom: 50px;
-  background: url('lemon.jpg')no-repeat center center;
-  /*background-color: #868e96;*/
+  background: url('succulent-web.jpg')no-repeat center center;
+  background-color: #e0dfdf;
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
@@ -138,40 +213,13 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
-header.masthead {
-  margin-bottom: 50px;
-  background: url('oils.jpg') no-repeat center center;
-  /*background-color: #868e96;*/
-  background-attachment: scroll;
-  position: relative;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-#mainhead_background {
-  padding-top: 10rem;
-  padding-bottom: calc(10rem - 56px);
-  height: 100%;
-  background: url("oils.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
 
 
 #profile-heading {
   margin-left: 410px;
 }
 
-header.masthead .overlay {
+/*header.masthead .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -179,7 +227,7 @@ header.masthead .overlay {
   width: 100%;
   background-color: #212529;
   opacity: 0.5;
-}
+}*/
 
 
 
@@ -275,7 +323,7 @@ header.masthead .post-heading .meta a {
 
 .post-preview :focus, .post-preview:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: #918ca0;
 }
 
 .post-preview > .post-title {
@@ -310,6 +358,10 @@ header.masthead .post-heading .meta a {
   .post-preview > a > .post-title {
     font-size: 36px;
   }
+}
+
+.thumbnail-image {
+  margin-right: 35px;
 }
 
 /*sign in form */

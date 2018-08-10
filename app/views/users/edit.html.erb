@@ -1,7 +1,7 @@
-<!-- Page Header -->
+	<% provide(:title, "Edit Profile") %>
+	<!-- Page Header -->
 	<header class="masthead" id="editprofile_background">
-		<%= render 'shared/navigationbar' %>
-		<div class="overlay"></div>
+	<%= render 'shared/navigationbar' %>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-10 mx-auto">
@@ -18,8 +18,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-        <%= form_for @user, :html => {class: 'form-horizontal'} do |f| %>
-        <%= render 'shared/error_messages' %>
+      <%= form_for @user, :html => {class: 'form-horizontal'} do |f| %>
+      <%= render 'shared/error_messages' %>
 				<div class="control-group">
 					<div class="form-group floating-label-form-group controls">
             <%= f.label :first_name %>
@@ -58,7 +58,7 @@
 			</div>
 		</div>
 	</div>
-
 	<hr>
 
 	<!-- Footer -->
+	<%= render 'shared/footer' %>

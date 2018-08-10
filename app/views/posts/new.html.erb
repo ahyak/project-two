@@ -1,7 +1,7 @@
-<!-- Page Header -->
+	<% provide(:title, "New Post") %>
+	<!-- Page Header -->
 	<header class="masthead" id="newpost_background">
-		<%= render 'shared/navigationbar' %>
-		<div class="overlay"></div>
+	<%= render 'shared/navigationbar' %>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-10 mx-auto">
@@ -19,7 +19,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-10 mx-auto">
-        <%= form_for @post, :html => {class: 'form-horizontal'}  do |post| %>
+      <%= form_for @post, :html => {class: 'form-horizontal'}  do |post| %>
 				<div class="control-group">
 					<div class="form-group floating-label-form-group controls">
             <%= post.label :title, 'Title'%>
@@ -42,11 +42,11 @@
 				<div class="form-group">
           <%= post.submit 'Create Your New Post', class: 'btn btn-primary'%>
 				</div>
-				<%end %>
+			<%end %>
 			</div>
 		</div>
 	</div>
-
 	<hr>
 
 	<!-- Footer -->
+	<%= render 'shared/footer' %>
